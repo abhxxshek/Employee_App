@@ -9,7 +9,7 @@ const Home = () => {
   const[cardData,setData]=useState([]);
   const navigate=useNavigate();
   useEffect(()=>{
-     axiosInstance.get('http://localhost:8000/employee').then((res)=>{
+     axiosInstance.get('https://employee-app-backend-4jmq.onrender.com/employee').then((res)=>{
        setData(res.data);
      }).catch((error)=>{
        console.log(error)
@@ -21,7 +21,7 @@ const Home = () => {
    }
    
    function delete_emp(item){
-    axiosInstance.delete(`http://localhost:8000/employee/delete-emp/${item._id}`).then((res)=>{
+    axiosInstance.delete(`https://employee-app-backend-4jmq.onrender.com/employee/delete-emp/${item._id}`).then((res)=>{
       alert(res.data.message);
 
     }).catch((error)=>{
