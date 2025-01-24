@@ -21,11 +21,10 @@ const Add_employee = () => {
     let valid=true;
     const errors={};
 
-    //name validation code
+    //name validation
     if(form.name.trim()==""){
       errors.name='Name is requied !'
       valid=false;
-      
     }
 
     //designation validation
@@ -66,7 +65,7 @@ const Add_employee = () => {
     if(validate()){
       if (location.state!=null) {
        
-        axiosInstance.put('https://employee-app-backend-4jmq.onrender.com/employee/update-emp/'+location.state.item._id,form).then((res)=>{
+        axiosInstance.put('http://localhost:8000/employee/update-emp/'+location.state.item._id,form).then((res)=>{
           alert("Employee updated successfully");
           navigate('/home')
         }).catch((error)=>{
@@ -75,7 +74,7 @@ const Add_employee = () => {
         
       }else{
         
-        axiosInstance.post('https://employee-app-backend-4jmq.onrender.com/employee/add-emp',form).then((res)=>{
+        axiosInstance.post('http://localhost:8000/employee/add-emp',form).then((res)=>{
           alert(res.data.message);
           navigate('/home');
         }).catch((error)=>{

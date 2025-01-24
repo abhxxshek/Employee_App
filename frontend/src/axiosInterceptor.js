@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance=axios.create({
-    baseURL:'https://employee-app-backend-4jmq.onrender.com'
+    baseURL:'http://localhost:8000'
 })
 
 axiosInstance.interceptors.request.use((config)=>{

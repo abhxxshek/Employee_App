@@ -13,7 +13,7 @@ const Login = () => {
 
   function capValue(){
     console.log(form);
-    axios.post('https://employee-app-backend-4jmq.onrender.com/user/login',form).then((res)=>{
+    axios.post('http://localhost:8000/user/login',form).then((res)=>{
       alert(res.data.message);
       if(res.data.token){
         sessionStorage.setItem('logintoken',res.data.token)
