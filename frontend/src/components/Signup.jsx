@@ -49,7 +49,7 @@ const Signup = () => {
   if(validate()){
     
     console.log(form);
-    axios.post("http://localhost:8000/user/adduser",form).then((res)=>{
+    axios.post("https://employee-app-backend-4jmq.onrender.com/user/adduser",form).then((res)=>{
       alert(res.data.message);
       navigate('/home');
     }).catch((error)=>{
