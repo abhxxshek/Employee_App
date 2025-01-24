@@ -21,10 +21,11 @@ const Add_employee = () => {
     let valid=true;
     const errors={};
 
-    //name validation
+    //name validation code
     if(form.name.trim()==""){
       errors.name='Name is requied !'
       valid=false;
+      
     }
 
     //designation validation
